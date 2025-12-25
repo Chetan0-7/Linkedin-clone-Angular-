@@ -1,6 +1,6 @@
 {
   "buildCommand": "ng build --configuration production",
-  "outputDirectory": "dist/linkedin-clone-angular",
+  "outputDirectory": "dist/linkein-clone-angular",
   "rewrites": [
     {
       "source": "/(.*)",
