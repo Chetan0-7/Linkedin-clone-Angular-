@@ -5,7 +5,7 @@
     "packageManager": "npm"
   },
   "projects": {
-    "angular-todo": {
+    "Linkein-clone-angular": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
