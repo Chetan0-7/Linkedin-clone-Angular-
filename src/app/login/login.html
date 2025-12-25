@@ -1,0 +1,39 @@
+<div class="login-page">
+  <h1>LinkedIn Clone</h1>
+
+  <input
+    type="text"
+    placeholder="Email or Username"
+    [(ngModel)]="username"
+  />
+
+  <input
+    type="password"
+    placeholder="Password"
+    [(ngModel)]="password"
+  />
+
+  <button (click)="login()">Login</button>
+
+  <!-- Single Forgot Password trigger -->
+  <p class="forgot" (click)="showForgot = true">
+    Forgot password?
+  </p>
+</div>
+
+<!-- Forgot Password Modal -->
+<div class="modal-backdrop" *ngIf="showForgot">
+  <div class="modal">
+    <h3>Reset password</h3>
+
+    <input
+      type="text"
+      placeholder="Enter your email or username"
+      [(ngModel)]="resetUser"
+    />
+
+    <button (click)="resetPassword()">Send reset link</button>
+
+    <p class="close" (click)="showForgot = false">Cancel</p>
+  </div>
+</div>

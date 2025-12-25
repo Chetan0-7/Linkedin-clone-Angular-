@@ -1,0 +1,55 @@
+<div class="feed-page">
+
+  <div class="feed-header">
+    <h3>Feed</h3>
+
+    <div class="user-info">
+      <span>{{ loggedInUser }}</span>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="create-post">
+  <textarea
+    placeholder="What's on your mind?"
+    [(ngModel)]="newContent">
+  </textarea>
+
+  <!-- ✅ FIXED -->
+  <input
+    type="file"
+    accept="image/*"
+    (change)="onImageSelect($event)"
+  />
+
+  <button (click)="addPost()">Post</button>
+</div>
+
+<div
+  class="post-card"
+  *ngFor="let post of posts">
+
+  <h4>{{ post.user }}</h4>
+  <p>{{ post.content }}</p>
+
+  <img
+    *ngIf="post.image"
+    [src]="post.image"
+    class="post-image"
+    alt="Post image"
+  />
+
+  <button (click)="likePost(post)">
+    {{ post.liked ? '💙 Liked' : '👍 Like' }} ({{ post.likes }})
+  </button>
+
+  <button
+    *ngIf="post.user === loggedInUser"
+    class="delete-btn"
+    (click)="deletePost(post.id)">
+    🗑 Delete
+  </button>
+
+</div>
+
+
